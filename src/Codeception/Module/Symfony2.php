@@ -257,6 +257,7 @@ class Symfony2 extends Framework implements DoctrineProvider, SupportsDomainRout
      */
     public function grabServiceFromContainer($service)
     {
+	    $this->bootKernel();
         if (!$this->kernel->getContainer()->has($service)) {
             $this->fail("Service $service is not available in container");
         }
